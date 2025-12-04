@@ -1,0 +1,574 @@
+
+:root {
+    --cor-principal: #0D3973;
+    --cor-botoes: #049DBF;
+    --footer: #0D0D0D;
+    --cor-destaque: #038C7F;
+}
+
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+
+body, html {
+    min-height: 100vh;
+    position: relative;
+    /*border: 5px solid rgb(9, 72, 145);
+    border-radius: 10px;
+    border-bottom: none;*/
+}
+
+p {
+    line-height: 1.8em;
+}
+
+/* Hero */
+#background {
+    min-height: 90vh;
+    background: black url(../img/familia-usuando-internet.jpg) no-repeat center top;
+    margin-bottom: 100px;
+}
+
+.fundo-preto {
+    background-color: rgba(0, 0, 0, 0.322);
+    min-height: 100vh;
+   
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.329);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+menu {
+    align-self: center;
+}
+
+header ul li {
+    display: inline-block;
+}
+
+header a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+#cta {
+    display: none;
+}
+
+#hero {
+    height: 65vh;
+    color: white;
+    display: flex;
+    width: 97vw;
+    gap: 10px;
+    margin: auto;
+    justify-content: center;
+    align-items: start;
+    flex-flow: column nowrap;
+
+}
+
+#hero h1 {
+    font-size: 2.1em;
+}
+
+#hero h3 {
+    width: 380px;
+    line-height: 1.5em;
+}
+
+#hero a {
+    color: white;
+    text-decoration: none;
+    background-color: var(--cor-botoes);
+    font-weight: bold;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    opacity: .7;
+    transition: opacity .3s; 
+}
+
+#hero a:hover {
+    opacity: 1;
+    transition-timing-function: ease;
+}
+
+/* Nossos diferenciais */
+
+section#diferenciais {
+    margin-bottom: 100px;
+}
+
+section#diferenciais h2 {
+    text-align: center;
+    margin: 0 0 40px 0;
+    font-weight: 700;
+}
+
+section#diferenciais > article {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+section#diferenciais article > p {
+    margin: 10px;
+}
+
+section#diferenciais p > img {
+    display: block;
+    margin: auto;
+}
+
+
+/* Planos de internet */
+
+#planos-de-internet {
+    background: blue url(../img/planos-img.jpg) no-repeat left center fixed;
+    color: white;
+    height: 300px;
+}
+
+#planos-de-internet  article {
+    background-color: rgba(0, 0, 0, 0.61);
+    padding-bottom: 20px;
+    height: 100%;
+}
+
+#planos-de-internet > article {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.card-plan {
+    flex: 1 1 400px;
+    height: 150px;
+    padding: 10px;
+
+    position: relative;
+
+}
+
+.card-plan a i {
+    font-size: 2.5em;
+    margin: 10px 0;
+
+}
+
+
+.card-plan > a {
+    background-color: var(--cor-destaque);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: .8em;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: block;
+    margin: auto;
+    width: 300px;
+    height: 120px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* Depoimento de clientes */
+
+#depoimento-de-clientes {
+    margin: 100px 0;
+}
+
+#depoimento-de-clientes {
+    display: flex;
+    gap: 10px;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+#depoimento-de-clientes > h2 {
+    flex: 0 1 100%;
+    text-align: center;
+    padding-bottom: 40px;
+    font-weight: 700;
+}
+
+.depoimento {
+    padding: 10px;
+    flex: 0 1 280px;
+    height: 140px;
+    border-radius: 10px;
+    border: 2px solid var(--cor-principal);
+
+}
+
+.depoimento:hover {
+    background-color: var(--cor-principal);
+    color: white;
+    cursor: pointer;
+    transition: background-color .3s;
+    transition-timing-function: ease-out;
+
+}
+
+.depoimento p {
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Velocidade e perfomance */
+section#sobre {
+    max-width: 1000px;
+    margin: auto;
+}
+
+#sobre p {
+    line-height: 1.8em;
+    text-indent: 30px;
+    text-align: justify;
+}
+section#sobre h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+/* Perguntas frequentes */
+
+section#perguntas {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 150px;
+    
+}
+
+section#perguntas  p:nth-child(odd) {
+    text-indent: 30px;
+    text-decoration: underline;
+}
+
+section#perguntas  p:nth-child(even) {
+    font-weight: 700;
+}
+
+section#perguntas > article {
+    flex: 0 1 50%;
+}
+
+#img-perguntas {
+    display: flex;
+    align-items: center;
+}
+
+section#perguntas article h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+div#img-perguntas img {
+    width: 350px;
+   
+}
+
+/* Suporte */
+
+section#suporte {
+    height: 220px;
+    padding: 0 15px;
+    margin: 130px 0 0 0;
+    background-color: var(--cor-principal);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+section#suporte p {
+    color: #fff;
+    font-weight: bold;
+}
+
+#suporte h2 {
+    margin-bottom: 20px;
+}
+
+section#suporte a {
+    color: var(--cor-destaque);
+    background-color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Prova Social */
+#prova-social-container {
+    height: 50vh;
+    background: var(--cor-principal) url(../img/61765.jpg) no-repeat center center;
+    background-size: cover;
+    margin: 200px 0;
+}
+
+#logos-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.logo-empresa {
+    width: 200px;
+    transition: transform .8s;
+}
+
+.logo-empresa:hover {
+    cursor: pointer;
+    transform: translateY(-50px);
+}
+
+.fundo-preto-2 {
+    background-color: rgba(0, 0, 0, 0.322);
+    min-height: 100%;  
+}
+
+.fundo-preto-2 h2 {
+    padding: 50px 0;
+    text-align: center;
+    font-size: 3em;
+    color: #ffff;
+    text-transform: uppercase;
+}
+/* Localização */
+
+section#localizacao {
+    margin-bottom: 200px;
+    margin-top: 200px;
+}
+
+section#localizacao > h2 {
+    margin-bottom: 80px;
+    text-align: center;
+    font-size: 3em;
+}
+
+section#localizacao iframe {
+    display: block;
+    margin: auto;
+    width: 800px;
+}
+
+footer {
+    background-color: #0D0D0D;
+    padding: 10px 5px;
+    display: flex;
+    gap: 10px;
+    flex-flow: column nowrap;
+    align-items: center;
+    color: white;
+}
+
+footer #redes-sociais {
+    align-self: flex-start;
+}
+
+footer h1 {
+    font-size: 4.5em;
+}
+
+footer p#dev > a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer p#dev > a:hover {
+    text-decoration: underline;
+
+}
+
+footer i {
+    color: white;
+    font-size: 1.7em;
+}
+
+footer i:hover {
+    cursor: pointer;
+    color: rgb(235, 235, 11);
+    transition: color .3s;
+}
+
+footer p:last-child > a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+
+    /* header */
+
+    header {
+        padding: 0 4px;
+    }
+    div#fundo-preto {
+        padding: 0;
+    }
+
+    header ul li {
+        display: none;
+    }
+
+    header ul li:last-child {
+        display: block;
+        background-color: var(--cor-botoes);
+        padding: 10px;
+        border-radius: 10px;    
+        opacity: 1;
+    }
+
+    menu {
+        align-self: center;
+    }
+
+    header img {
+        width: 180px;
+    }
+
+    header #cta {
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        text-align: center; 
+        border: 1px solid var(--cor-botoes);
+    }
+
+    #background {
+        background-image: url(../img/hero-celular.jpg);
+        background-position: center ;
+        min-height: 100vh;
+       
+    }
+
+    section#hero {
+        gap: 12px;
+        margin: 0;
+        
+       
+    }
+
+    section#hero a {
+        margin: 0 auto;
+        opacity: 1;
+    }
+
+    /* Diferenciais */
+    #diferenciais article {
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        text-align: center;
+        gap: 30px;
+    }
+
+    /* Planos de internet */
+
+    #planos-de-internet {
+        height: 322px;
+    }
+
+   /* Perguntas frequentes */
+
+   #perguntas {
+    flex-wrap: wrap;
+   }
+
+   #perguntas img {
+    display: none;
+   }
+
+   section#perguntas > article {
+        flex: 1;   
+        text-align: center; 
+   }
+
+   section#perguntas > article > p:nth-child(even) {
+    margin: 0;
+    text-align: left;
+    padding-left: 3px;
+   }
+
+   section#perguntas > article > p {
+    margin-bottom: 10px;
+
+   }
+
+
+    /* Localização */
+
+    #localizacao {
+        text-align: center;
+    }
+
+    section#localizacao > h2 {
+        margin-bottom: 80px;
+        text-align: center;
+        font-size: 2em;
+    
+    }
+
+    #localizacao > iframe {
+        display: inline-block;
+        max-width: 95%;
+        aspect-ratio: 4/5;
+    }
+
+    /* Suporte */
+    section#suporte {
+        flex-flow: column nowrap;
+
+    }
+
+    section#suporte p {
+        text-align: center;
+    }
+
+    /* Sobre */
+    #sobre {
+        padding: 0 10px;
+    }
+    /* Clientes */
+
+    #prova-social-container {
+        height: auto;
+        
+    }
+
+    .fundo-preto-2 {
+        padding-bottom: 50px;
+    }
+    #logos-container {
+        flex-flow: column nowrap;
+        gap: 20px;
+    }
+    
+    .logo-empresa:hover {cursor: none;}
+
+}
