@@ -29,7 +29,9 @@ p {
 /* Hero */
 #background {
     min-height: 90vh;
-    background: black url(../img/familia-usuando-internet.jpg) no-repeat center top;
+    /* MOD: garante que a imagem de fundo do hero cubra o bloco inteiro e fique centrada */
+    background: black url(../img/familia-usuando-internet.jpg) no-repeat center;
+    background-size: cover;
     margin-bottom: 100px;
 }
 
@@ -44,11 +46,18 @@ header {
     box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.329);
     display: flex;
     justify-content: space-between;
-    padding-top: 10px;
+    /* MOD: adiciona respiro horizontal consistente no cabeçalho */
+    padding: 10px 6vw 0 6vw;
 }
 
 menu {
     align-self: center;
+}
+
+/* MOD: controla espaçamento entre itens do menu sem depender de margens individuais */
+header ul {
+    display: flex;
+    gap: 18px;
 }
 
 header ul li {
@@ -59,7 +68,8 @@ header a {
     color: white;
     font-size: 14px;
     text-decoration: none;
-    margin: 0 4px;
+    /* MOD: remove margem horizontal fixa para o gap do flex controlar o espaçamento */
+    margin: 0;
 }
 
 #cta {
@@ -70,7 +80,8 @@ header a {
     height: 65vh;
     color: white;
     display: flex;
-    width: 97vw;
+    /* MOD: limita a largura do bloco para melhorar legibilidade em telas grandes */
+    width: min(1100px, 92vw);
     gap: 10px;
     margin: auto;
     justify-content: center;
@@ -80,11 +91,13 @@ header a {
 }
 
 #hero h1 {
-    font-size: 2.1em;
+    /* MOD: aumenta levemente o destaque do título principal */
+    font-size: 2.4em;
 }
 
 #hero h3 {
-    width: 380px;
+    /* MOD: usa medida baseada em caracteres para legibilidade do texto */
+    width: min(52ch, 90vw);
     line-height: 1.5em;
 }
 
@@ -98,8 +111,11 @@ header a {
     padding: 10px;
     border-radius: 10px;
     opacity: .7;
+    transition-timing-function: ease;
     transition: opacity .3s; 
 }
+
+#hero a:active {transform: scale(.98); background-color: orangered;} 
 
 #hero a:hover {
     opacity: 1;
@@ -119,10 +135,12 @@ section#diferenciais h2 {
 }
 
 section#diferenciais > article {
-    width: 80%;
+    /* MOD: ajusta largura e alinhamento para evitar linhas muito longas */
+    width: min(1100px, 92vw);
     margin: auto;
     display: flex;
     justify-content: space-around;
+    gap: 24px;
 }
 
 section#diferenciais article > p {
@@ -140,12 +158,13 @@ section#diferenciais p > img {
 #planos-de-internet {
     background: blue url(../img/planos-img.jpg) no-repeat left center fixed;
     color: white;
-    height: 300px;
+    /* MOD: permite que a seção cresça conforme o conteúdo */
+    min-height: 300px;
 }
 
 #planos-de-internet  article {
-    background-color: rgba(0, 0, 0, 0.61);
-    padding-bottom: 20px;
+    /* MOD: adiciona padding vertical para dar respiro */
+    padding: 60px 0 0 0;
     height: 100%;
 }
 
@@ -154,6 +173,9 @@ section#diferenciais p > img {
     flex-flow: row wrap;
     gap: 10px;
     align-items: center;
+    /* MOD: centraliza conteúdo e limita largura */
+    margin: 0 auto;
+    width: min(1100px, 92vw);
 }
 
 .card-plan {
@@ -184,13 +206,16 @@ section#diferenciais p > img {
     text-decoration: none;
     display: block;
     margin: auto;
-    width: 300px;
+    /* MOD: limita a largura do card para manter consistência */
+    width: min(320px, 90%);
     height: 120px;
     position: absolute;
     left: 50%;
     top: 50%;
 
     transform: translate(-50%, -50%);
+    /* MOD: adiciona profundidade visual sem fugir da identidade */
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -205,6 +230,8 @@ section#diferenciais p > img {
     gap: 10px;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    /* MOD: adiciona padding lateral para evitar encostar nas bordas */
+    padding: 0 4vw;
 }
 
 #depoimento-de-clientes > h2 {
@@ -217,7 +244,8 @@ section#diferenciais p > img {
 .depoimento {
     padding: 10px;
     flex: 0 1 280px;
-    height: 140px;
+    /* MOD: permite altura automática para textos maiores */
+    min-height: 140px;
     border-radius: 10px;
     border: 2px solid var(--cor-principal);
     text-align: center;
@@ -240,8 +268,10 @@ section#diferenciais p > img {
 
 /* Velocidade e perfomance */
 section#sobre {
+    /* MOD: centraliza e dá respiro lateral ao texto institucional */
     max-width: 1000px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0 4vw;
 }
 
 #sobre p {
@@ -261,6 +291,10 @@ section#perguntas {
     display: flex;
     justify-content: space-between;
     padding-bottom: 150px;
+    /* MOD: adiciona espaçamento entre imagem e conteúdo */
+    gap: 30px;
+    padding-left: 4vw;
+    padding-right: 4vw;
     
 }
 
@@ -304,6 +338,9 @@ section#suporte {
     align-items: center;
     justify-content: space-around;
     margin-bottom: 50px;
+    /* MOD: cria um pouco de separação lateral em telas maiores */
+    padding-left: 6vw;
+    padding-right: 6vw;
 }
 
 section#suporte p {
@@ -325,16 +362,23 @@ section#suporte a {
 
 /* Prova Social */
 #prova-social-container {
-    height: 50vh;
+    height: auto;
     background: var(--cor-principal) url(../img/61765.jpg) no-repeat center center;
     background-size: cover;
     margin: 200px 0;
+    padding-bottom: 100px;
+    /* MOD: garante que o conteúdo fique centralizado verticalmente */
+    display: flex;
+    align-items: center;
 }
 
 #logos-container {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    /* MOD: permite quebra em telas menores sem perder alinhamento */
+    flex-wrap: wrap;
+    gap: 24px;
     
 }
 
@@ -349,8 +393,10 @@ section#suporte a {
 }
 
 .fundo-preto-2 {
-    background-color: rgba(0, 0, 0, 0.322);
     min-height: 100%;  
+    /* MOD: adiciona padding para o conteúdo não encostar nas bordas */
+    padding: 20px 4vw 40px 4vw;
+    margin: auto;
 }
 
 .fundo-preto-2 h2 {
@@ -365,6 +411,8 @@ section#suporte a {
 section#localizacao {
     margin-bottom: 200px;
     margin-top: 200px;
+    /* MOD: padding lateral para manter alinhamento com outras seções */
+    padding: 0 4vw;
 }
 
 section#localizacao > h2 {
@@ -376,7 +424,10 @@ section#localizacao > h2 {
 section#localizacao iframe {
     display: block;
     margin: auto;
-    width: 800px;
+    /* MOD: deixa o mapa responsivo sem perder proporção */
+    width: min(900px, 100%);
+    aspect-ratio: 16 / 9;
+    height: auto;
 }
 
 footer {
@@ -387,6 +438,8 @@ footer {
     flex-flow: column nowrap;
     align-items: center;
     color: white;
+    /* MOD: melhora o espaçamento geral do rodapé */
+    padding: 30px 5px;
 }
 
 footer #redes-sociais {
@@ -428,7 +481,8 @@ footer p:last-child > a:hover {
     /* header */
 
     header {
-        padding: 0 4px;
+        /* MOD: mantém consistência do padding do header em mobile */
+        padding: 6px 4vw;
     }
     div#fundo-preto {
         padding: 0;
@@ -472,8 +526,8 @@ footer p:last-child > a:hover {
     section#hero {
         gap: 12px;
         margin: 0;
-        
-       
+        padding: 30px;
+
     }
 
     section#hero a {
@@ -492,14 +546,45 @@ footer p:last-child > a:hover {
     /* Planos de internet */
 
     #planos-de-internet {
-        height: 322px;
+        /* MOD: usa min-height para não cortar conteúdo */
+        min-height: 322px;
     }
 
+    #planos-de-internet > article {
+        padding: 0;
+    }
+
+    /* Depoimentos de clientes */
+    #depoimento-de-clientes {
+        gap: 30px;
+    }
+
+    .depoimento {
+        flex: 0 1 80%;
+        padding: 20px 0 0 0;
+    }
+
+    .depoimento:active {transform: scale(.98);}
+    
    /* Perguntas frequentes */
 
-   #perguntas {
-    flex-wrap: wrap;
+   section#perguntas {
+        display: block;
+        padding: 0px;
+        margin-bottom: 100px;
+        padding: 10px;
    }
+    
+
+   section#perguntas article h2 {
+        text-align: left;
+    }
+
+    section#perguntas article p.respostas {
+        text-indent: 0;
+        text-align: left;
+        text-decoration: none;
+    }
 
    #perguntas img {
     display: none;
@@ -521,7 +606,21 @@ footer p:last-child > a:hover {
 
    }
 
+   #prova-social-container {
+    padding: 0;
 
+   }
+   div.fundo-preto-2 {padding-bottom: 50px;}
+   /* Sobre */
+   section#sobre {
+        padding: 0 10px;
+   }
+   section#sobre p, section#sobre h2 {
+    text-align: left;
+   }
+   section#sobre p {
+    text-indent: 0;
+   }
     /* Localização */
 
     #localizacao {
@@ -560,14 +659,16 @@ footer p:last-child > a:hover {
     #prova-social-container {
         height: auto;
         
+        
     }
 
     .fundo-preto-2 {
-        padding-bottom: 50px;
+        padding-bottom: 200px;
+       
     }
     #logos-container {
         flex-flow: column nowrap;
-        gap: 20px;
+        gap: 40px;
     }
     
     .logo-empresa:hover {cursor: none;}
