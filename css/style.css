@@ -327,6 +327,40 @@ div#img-perguntas img {
    
 }
 
+.pergunta-container:first-child {
+    border-bottom: 2px solid #00000071;
+    border-top: 2px solid #00000071;
+    padding: 10px 0;
+    margin-bottom: 5px;
+}
+.pergunta-container {
+    border-bottom: 2px solid #00000071;
+    padding: 10px 0;
+    margin-bottom: 5px;
+}
+
+
+div.pergunta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.resposta {
+    display: none;
+}
+
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+#esconder {
+    display: none;
+}
 /* Suporte */
 
 section#suporte {
@@ -555,24 +589,25 @@ footer p:last-child > a:hover {
     }
 
     /* Depoimentos de clientes */
+    section#depoimento-de-clientes {
+        padding: 5px;
+    }
     #depoimento-de-clientes {
         gap: 30px;
     }
 
     .depoimento {
-        flex: 0 1 80%;
+        flex: 0 1 90%;
         padding: 20px 0 0 0;
     }
 
     .depoimento:active {transform: scale(.98);}
     
    /* Perguntas frequentes */
-
    section#perguntas {
         display: block;
-        padding: 0px;
+        padding: 5px;
         margin-bottom: 100px;
-        padding: 10px;
    }
     
 
@@ -580,32 +615,22 @@ footer p:last-child > a:hover {
         text-align: left;
     }
 
-    section#perguntas article p.respostas {
-        text-indent: 0;
-        text-align: left;
-        text-decoration: none;
-    }
-
+   
    #perguntas img {
     display: none;
    }
 
    section#perguntas > article {
-        flex: 1;   
-        text-align: center; 
+        flex: 0 1 100%;   
    }
 
-   section#perguntas > article > p:nth-child(even) {
-    margin: 0;
-    text-align: left;
-    padding-left: 3px;
-   }
-
-   section#perguntas > article > p {
-    margin-bottom: 10px;
+   div.pergunta {
+        display: flex;
+        flex-flow: row nowrap;
 
    }
 
+  /* Prova Social */
    #prova-social-container {
     padding: 0;
 

@@ -14,6 +14,7 @@
     <!-- Link do Google Font  -->
 
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 <body onload="atualizarAno()">
     <main>
@@ -67,14 +68,14 @@
         <section id="planos-de-internet">
             <article>
                 <div class="card-plan">
-                    <a href="plano-residencial.html">
+                    <a href="#">
                         <i class="fa-solid fa-house"></i>
                         <h3>Planos Residenciais</h3> 
                     </a>
                 </div>
         
                 <div class="card-plan">
-                    <a href="plano-empresarial.html">
+                    <a href="#">
                         <i class="fa-solid fa-building"></i>
                         <h3>Planos empresariais</h3> 
                     </a>
@@ -115,15 +116,25 @@
             
             <article>
                 <h2>Perguntas frequentes</h2>
-                <p>Como é o contracto de instalação?</p>
-                <p class="respostas">
-                    A instalção é feita sem a necessidade do cliente adquirir os equipamentos a QoS Tel disponibilizará até o cancelamento do contracto.                   
-                </p>
-                
-                <p>Quais são os locais de abrangencia da QoS Tel</p>
-                <p class="respostas">
-                    A QoS Tel tem servidores disponiveis em quase toda Luanda que permitem fornecer serviços em qualquer parte da capital e algumas zonas de Icolo e Bengo. 
-                </p>
+                <div class="pergunta-container">
+                    <div class="pergunta">
+                        <h3>Como é o contracto de instalação?</h3> <i class="fa-solid fa-arrow-down" id="mostrar"></i> 
+                        <i class="fa-solid fa-arrow-up-long hidden" id="esconder"></i>
+                    </div>
+                    <p class="resposta">
+                        A instalção é feita sem a necessidade do cliente adquirir os equipamentos a QoS Tel disponibilizará até o cancelamento do contracto.  
+                    </p>
+                </div>
+
+                <div class="pergunta-container">
+                    <div class="pergunta">
+                        <h3>Quais são os locais de abrangencia da QoS Tel</h3> <i class="fa-solid fa-arrow-down" id="mostrar"></i> 
+                        <i class="fa-solid fa-arrow-up-long hidden" id="esconder"></i>
+                    </div>
+                    <p class="resposta">
+                        A QoS Tel tem servidores disponiveis em quase toda Luanda que permitem fornecer serviços em qualquer parte da capital e algumas zonas de Icolo e Bengo. 
+                    </p>
+                </div>
             </article>
         </section>
         <!-- Secção de velocidade e perfomance -->
