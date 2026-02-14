@@ -22,6 +22,10 @@ body, html {
     border-bottom: none;*/
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 p {
     line-height: 1.8em;
 }
@@ -74,6 +78,12 @@ header a {
     text-decoration: none;
     /* MOD: remove margem horizontal fixa para o gap do flex controlar o espaçamento */
     margin: 0;
+}
+
+.hamburguer-container {
+    display: none;
+    color: #fff;
+    font-size: 1.5em;
 }
 
 #cta {
@@ -149,12 +159,18 @@ section#diferenciais > article {
 
 section#diferenciais article > p {
     margin: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 10px;
+}
+section#diferenciais article > p > i {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--cor-destaque);
 }
 
-section#diferenciais p > img {
-    display: block;
-    margin: auto;
-}
+
 
 p.difereciais-card {
     outline: 1px solid #0000005e;
@@ -405,7 +421,7 @@ div.pergunta {
 
 #esconder:hover, #mostrar:hover {
     cursor: pointer;
-}
+}  
 /* Suporte */
 
 section#suporte {
@@ -572,27 +588,26 @@ footer p:last-child > a:hover {
     header {
         /* MOD: mantém consistência do padding do header em mobile */
         padding: 6px 4vw;
+        align-items: center;
+        flex-wrap: wrap;
+        position: fixed;
+        width: 100vw;
+        background-color: var(--cor-principal);
+        z-index: 100;
     }
+
     div#fundo-preto {
         padding: 0;
     }
+    menu ul {
+        font-weight: bold;
+        flex-flow: column nowrap;
+        align-items: center;
+        flex: 1;
+        gap: 50px;
+        padding: 40px 0;
 
-    header ul li {
-        display: none;
     }
-
-    header ul li:last-child {
-        display: block;
-        background-color: var(--cor-botoes);
-        padding: 10px;
-        border-radius: 10px;    
-        opacity: 1;
-    }
-
-    menu {
-        align-self: center;
-    }
-
     header img {
         width: 180px;
     }
@@ -605,6 +620,25 @@ footer p:last-child > a:hover {
         border: 1px solid var(--cor-botoes);
     }
 
+    menu#menu-container {
+        display: none;
+        flex: 1;
+        align-self: center;
+        width: 100%;
+    }
+
+
+     #logo, header .hamburguer-container {
+        flex: 0 1 50%;
+    
+    }
+
+    .hamburguer-container {
+        text-align: right;
+        display: block;
+    }
+
+
     #background {
         background-image: url(../img/hero-celular.jpg);
         background-position: center ;
@@ -612,15 +646,22 @@ footer p:last-child > a:hover {
        
     }
 
+    #planos-de-internet,
+    #diferenciais,
+    #suporte {
+        scroll-margin-top: 84px;
+    }
+
     section#hero {
         gap: 12px;
         margin: 0;
-        padding: 30px;
-
+        padding-left: 20px;
+        align-items: flex-start;
+        height: 90vh;
+        max-width: 90%;
     }
 
     section#hero a {
-        margin: 0 auto;
         opacity: 1;
     }
 

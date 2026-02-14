@@ -1,6 +1,11 @@
 var ano_atual = document.getElementById('ano')
 var ano = new Date().getFullYear()
 
+function atualizarAno() {
+    ano_atual.innerText = ano 
+}
+
+/*Perguntas Frequentes FAQ */
 var perguntasContainer = document.querySelectorAll('.pergunta-container')
 
 perguntasContainer.forEach((container) => {
@@ -27,8 +32,35 @@ perguntasContainer.forEach((container) => {
     })
 })
 
+/* MENU Hamburguer */
 
+var menu = document.getElementById('menu-hamburguer')
+var menuContainer = document.getElementById('menu-container')
+var janela = window
 
-function atualizarAno() {
-    ano_atual.innerText = ano 
+janela.addEventListener('resize', mostrarHamburguer)
+
+menu.addEventListener('click', (e) => {
+    if (e.target.id == 'menu-hamburguer') {
+        if (menuContainer.style.display != 'flex') {
+            console.log('1')
+            menuContainer.style.display = 'flex'
+            
+        } else {
+            menuContainer.style.display = 'none'
+        } 
+    }
+})
+
+function mostrarHamburguer() {
+    if (janela.innerWidth > 768) {
+        menuContainer.style.display = 'flex'
+    } else {
+        menuContainer.style.display = 'none'
+
+    }
 }
+
+
+
+
