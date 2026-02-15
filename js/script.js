@@ -20,7 +20,7 @@ perguntasContainer.forEach((container) => {
     mostrar.addEventListener('click', () => {
         resposta.classList.add('show')
         resposta.style.maxHeight = resposta.scrollHeight + 'px'
-        esconder.style.display = 'inline-flex'
+        esconder.style.display = 'flex'
         mostrar.style.display = 'none'
     })
 
@@ -43,7 +43,6 @@ janela.addEventListener('resize', mostrarHamburguer)
 menu.addEventListener('click', (e) => {
     if (e.target.id == 'menu-hamburguer') {
         if (menuContainer.style.display != 'flex') {
-            console.log('1')
             menuContainer.style.display = 'flex'
             
         } else {
@@ -53,7 +52,7 @@ menu.addEventListener('click', (e) => {
 })
 
 function mostrarHamburguer() {
-    if (janela.innerWidth > 768) {
+    if (janela.innerWidth > 600) {
         menuContainer.style.display = 'flex'
     } else {
         menuContainer.style.display = 'none'
@@ -61,6 +60,15 @@ function mostrarHamburguer() {
     }
 }
 
+/* Deixar de exibir a lista de links  */
+janela.addEventListener('scroll', () => {
+    if (janela.innerWidth <= 600) {
+        if (menuContainer.style.display == 'flex') {
+            menuContainer.style.display = 'none'
+        }
+        
+    }
+})
 
 
 

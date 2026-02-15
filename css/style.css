@@ -17,6 +17,8 @@
 body, html {
     min-height: 100vh;
     position: relative;
+    transition: height .3s width .3s;
+    transition-timing-function: ease;
     /*border: 5px solid rgb(9, 72, 145);
     border-radius: 10px;
     border-bottom: none;*/
@@ -134,6 +136,25 @@ header a {
 #hero a:hover {
     opacity: 1;
     transition-timing-function: ease;
+}
+
+a#whatsapp-btn {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 15px;
+        background-color: #2bb714;
+        color: white;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        font-size: 1.5em;
+        z-index: 1000;
+        text-decoration: none;
+}
+
+a#whatsapp-btn i {
+    /* font-size: 30px; */
 }
 
 /* Nossos diferenciais */
@@ -588,8 +609,8 @@ footer p:last-child > a:hover {
     header {
         /* MOD: mantém consistência do padding do header em mobile */
         padding: 6px 4vw;
-        align-items: center;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: auto auto;
         position: fixed;
         width: 100vw;
         background-color: var(--cor-principal);
@@ -598,6 +619,10 @@ footer p:last-child > a:hover {
 
     div#fundo-preto {
         padding: 0;
+    }
+    menu {
+        grid-column-start: 1;
+        grid-column-end: -1;
     }
     menu ul {
         font-weight: bold;
@@ -622,9 +647,9 @@ footer p:last-child > a:hover {
 
     menu#menu-container {
         display: none;
-        flex: 1;
-        align-self: center;
         width: 100%;
+        align-items: center;
+        justify-content: center;
     }
 
 
@@ -635,7 +660,9 @@ footer p:last-child > a:hover {
 
     .hamburguer-container {
         text-align: right;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
     }
 
 
@@ -649,7 +676,7 @@ footer p:last-child > a:hover {
     #planos-de-internet,
     #diferenciais,
     #suporte {
-        scroll-margin-top: 84px;
+        scroll-margin-top: 104px;
     }
 
     section#hero {
