@@ -36,6 +36,10 @@ h2, h1 {
     text-transform: capitalize;
 }
 
+h2 {
+    font-size: 1.8em;
+}
+
 /* Hero */
 #background {
     min-height: 90vh;
@@ -339,9 +343,7 @@ section#sobre {
     margin: 0 auto;
     padding: 50px 0;
 }
-#sobre h2 {
-    font-size: 1.8em;
-}
+
 #sobre p {
     line-height: 1.8em;
     text-indent: 30px;
@@ -374,7 +376,9 @@ section#perguntas  p:nth-child(odd) {
 }
 
 section#perguntas  p:nth-child(even) {
-    font-weight: 700;
+    font-weight: 300;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
 }
 
 section#perguntas > article {
@@ -604,6 +608,10 @@ footer p:last-child > a:hover {
 
 @media screen and (max-width: 600px) {
 
+    /* Generals */
+    h2 {
+        font-size: 1.5em;
+    }
     /* header */
 
     header {
