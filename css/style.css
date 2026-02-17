@@ -143,23 +143,30 @@ header a {
 }
 
 a#whatsapp-btn {
-        display: block;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 15px;
-        background-color: #2bb714;
-        color: white;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-        font-size: 1.5em;
-        z-index: 1000;
-        text-decoration: none;
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px;
+    background-color: #2bb714;
+    color: white;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    font-size: 1.5em;
+    z-index: 1000;
+    text-decoration: none;
+    opacity: .7;
+    transition: opacity .5s ease-out;
 }
 
-a#whatsapp-btn i {
-    /* font-size: 30px; */
+a#whatsapp-btn:hover {
+    opacity: 1;
 }
+
+a#whatsapp-btn:active {
+    transform: scale(.98);
+}
+
 
 /* Nossos diferenciais */
 
@@ -205,7 +212,9 @@ p.difereciais-card {
     text-align: center;
     padding: 10px;
     padding-top: 20px;
-    transition: outline .3s;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: outline .3s box-shadow .3s;
     transition-timing-function: ease-in;
 
 }
@@ -218,15 +227,13 @@ p.difereciais-card > span {
 p.difereciais-card:hover {
     outline: 1px solid var(--cor-destaque);
     box-shadow: 2px 2px 12px #038c7e7a;
-    cursor: pointer;
-
 }
 
 
 /* Planos de internet */
 
 #planos-de-internet {
-    background: blue url(../img/planos-img.jpg) no-repeat left center fixed;
+    background: blue url(../img/planos-img.jpg) no-repeat center bottom fixed;
     color: white;
     /* MOD: permite que a seção cresça conforme o conteúdo */
     min-height: 300px;
@@ -286,6 +293,10 @@ p.difereciais-card:hover {
     transform: translate(-50%, -50%);
     /* MOD: adiciona profundidade visual sem fugir da identidade */
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card-plan h3 {
+    text-transform: capitalize;
 }
 
 
@@ -654,10 +665,20 @@ footer p:last-child > a:hover {
     }
 
     menu#menu-container {
-        display: none;
+        display: flex;
         width: 100%;
         align-items: center;
         justify-content: center;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: max-height .35s ease, opacity .25s ease;
+    }
+
+    menu#menu-container.menu-open {
+        opacity: 1;
+        pointer-events: auto;
     }
 
 

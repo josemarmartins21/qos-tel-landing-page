@@ -42,20 +42,23 @@ janela.addEventListener('resize', mostrarHamburguer)
 
 menu.addEventListener('click', (e) => {
     if (e.target.id == 'menu-hamburguer') {
-        if (menuContainer.style.display != 'flex') {
-            menuContainer.style.display = 'flex'
-            
+        if (!menuContainer.classList.contains('menu-open')) {
+            menuContainer.classList.add('menu-open')
+            menuContainer.style.maxHeight = menuContainer.scrollHeight + 'px'
         } else {
-            menuContainer.style.display = 'none'
+            menuContainer.style.maxHeight = '0px'
+            menuContainer.classList.remove('menu-open')
         } 
     }
 })
 
 function mostrarHamburguer() {
     if (janela.innerWidth > 600) {
-        menuContainer.style.display = 'flex'
+        menuContainer.style.maxHeight = 'none'
+        menuContainer.classList.remove('menu-open')
     } else {
-        menuContainer.style.display = 'none'
+        menuContainer.style.maxHeight = '0px'
+        menuContainer.classList.remove('menu-open')
 
     }
 }
@@ -63,12 +66,14 @@ function mostrarHamburguer() {
 /* Deixar de exibir a lista de links  */
 janela.addEventListener('scroll', () => {
     if (janela.innerWidth <= 600) {
-        if (menuContainer.style.display == 'flex') {
-            menuContainer.style.display = 'none'
+        if (menuContainer.classList.contains('menu-open')) {
+            menuContainer.style.maxHeight = '0px'
+            menuContainer.classList.remove('menu-open')
         }
         
     }
 })
+
 
 
 
