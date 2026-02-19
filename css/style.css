@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic:wght@400..700&display=swap');
 
 :root {
     --cor-principal: #0D3973;
     --cor-botoes: #049DBF;
     --footer: #0D0D0D;
     --cor-destaque: #038C7F;
+    --card-sombras: 0 1px 3px rgba(0, 0, 0, 0.463);
+    --font-family: 'Mulish', sans-serif;
 }
 
 /* General */
@@ -11,7 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Mulish', sans-serif;
+    font-family: var(--font-family);
 }
 
 body, html {
@@ -204,8 +207,8 @@ section#diferenciais article > p > i {
 
 
 
-p.difereciais-card {
-    outline: 1px solid #0000005e;
+#diferenciais p.difereciais-card {
+    outline: 1px solid var(--cor-destaque);
     border-radius: 10px;
     flex: 0 1 31.9999%;
     height: 130px; 
@@ -214,9 +217,13 @@ p.difereciais-card {
     padding-top: 20px;
     cursor: pointer;
     text-transform: capitalize;
-    transition: outline .3s box-shadow .3s;
+    transition: box-shadow .3s;
     transition-timing-function: ease-in;
 
+}
+#diferenciais p.difereciais-card:hover {
+    
+    box-shadow: 2px 2px 12px #038c7e7a;
 }
 
 p.difereciais-card > span {
@@ -224,10 +231,6 @@ p.difereciais-card > span {
     font-size: 18px;
 }
 
-p.difereciais-card:hover {
-    outline: 1px solid var(--cor-destaque);
-    box-shadow: 2px 2px 12px #038c7e7a;
-}
 
 
 /* Planos de internet */
@@ -323,28 +326,36 @@ p.difereciais-card:hover {
 }
 
 .depoimento {
-    padding: 10px;
-    flex: 0 1 280px;
+    padding: 20px 20px 40px 20px;
+    flex: 0 1 320px;
     /* MOD: permite altura automática para textos maiores */
-    min-height: 140px;
+    height: 220px;
     border-radius: 10px;
-    border: 2px solid var(--cor-principal);
-    text-align: center;
-
-}
-
-.depoimento:hover {
-    background-color: var(--cor-principal);
-    color: white;
+    box-shadow: var(--card-sombras);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: column nowrap;
     cursor: pointer;
-    transition: background-color .3s;
+    gap: 20px;
+    transition: transform .3s;
     transition-timing-function: ease-out;
 
 }
 
+.depoimento:hover {
+    transform: scale(1.05);
+
+}
+
 .depoimento p {
-    font-size: 14px;
+    font-size: 18px;
     font-style: italic;
+}
+
+.depoimento h4 {
+    font-weight: bolder;
+    font-size: 1.4em;
 }
 
 /* Velocidade e perfomance */
@@ -665,6 +676,8 @@ footer p:last-child > a:hover {
     }
 
     menu#menu-container {
+        padding-top: 24px;
+        padding-bottom: 18px;
         display: flex;
         width: 100%;
         align-items: center;
@@ -725,6 +738,7 @@ footer p:last-child > a:hover {
     #diferenciais article {
         flex-flow: column nowrap;
         justify-content: flex-start;
+        align-items: center;
         
         flex-flow: column nowrap;
         text-align: center;
@@ -733,6 +747,7 @@ footer p:last-child > a:hover {
 
      #diferenciais p.difereciais-card {
         flex: 0 1 170px;
+        width: 80%;
         padding-top: 40px;
      }
 
@@ -761,8 +776,15 @@ footer p:last-child > a:hover {
     }
 
     .depoimento {
-        flex: 0 1 90%;
-        padding: 20px 0 0 0;
+        flex: 0 1 80%;
+        padding: 20px;
+    }
+
+    .depoimento:hover {
+        transform: none;
+    }
+    .depoimento:active {
+        transform: scale(.98);
     }
 
     .depoimento:active {transform: scale(.98);}
