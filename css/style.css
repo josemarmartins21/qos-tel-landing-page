@@ -79,6 +79,7 @@ header ul {
 
 header ul li {
     display: inline-block;
+    a:hover {text-decoration: underline;}
 }
 
 header a {
@@ -133,15 +134,14 @@ header a {
     text-align: center;
     padding: 10px;
     border-radius: 10px;
-    opacity: .7;
     transition-timing-function: ease;
-    transition: opacity .3s; 
+    transition: background-color .3s; 
 }
 
-#hero a:active {transform: scale(.98); background-color: orangered;} 
+#hero a:active {transform: scale(.98);} 
 
 #hero a:hover {
-    opacity: 1;
+    background-color: orangered;
     transition-timing-function: ease;
 }
 
@@ -174,7 +174,9 @@ a#whatsapp-btn:active {
 /* Nossos diferenciais */
 
 section#diferenciais {
-    margin-bottom: 100px;
+    margin-bottom: 250px;
+    margin-top: 170px;
+    
 }
 
 section#diferenciais h2 {
@@ -185,48 +187,47 @@ section#diferenciais h2 {
 
 section#diferenciais > article {
     /* MOD: ajusta largura e alinhamento para evitar linhas muito longas */
-    width: min(950px, 92vw);
+    width: min(1050px, 92vw);
     margin: auto;
     display: flex;
     justify-content: flex-start;
     gap: 24px;
 }
 
-section#diferenciais article > p {
+section#diferenciais article > aside {
     margin: 10px;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    justify-content: space-evenly;
     gap: 10px;
 }
-section#diferenciais article > p > i {
-    font-size: 1.5em;
+section#diferenciais article > aside > i {
+    font-size: 1.8em;
     font-weight: bold;
-    color: var(--cor-destaque);
 }
 
 
 
-#diferenciais p.difereciais-card {
-    outline: 1px solid var(--cor-destaque);
+aside.difereciais-card {
+    background-color: #0a346b;
+    color: #fff;
     border-radius: 10px;
-    flex: 0 1 31.9999%;
-    height: 130px; 
+    flex: 0 1 314px;
+    height: 200px; 
     text-align: center;
     padding: 10px;
     padding-top: 20px;
     cursor: pointer;
-    text-transform: capitalize;
-    transition: box-shadow .3s;
+    transition: transform .3s;
     transition-timing-function: ease-in;
 
 }
-#diferenciais p.difereciais-card:hover {
-    
-    box-shadow: 2px 2px 12px #038c7e7a;
+aside.difereciais-card:hover {
+    transform: scale(1.05);
 }
 
-p.difereciais-card > span {
+aside.difereciais-card > span {
     font-weight: bold;
     font-size: 18px;
 }
@@ -234,16 +235,16 @@ p.difereciais-card > span {
 
 
 /* Planos de internet */
-
+/* 
 #planos-de-internet {
     background: blue url(../img/planos-img.jpg) no-repeat center bottom fixed;
     color: white;
-    /* MOD: permite que a seção cresça conforme o conteúdo */
+    MOD: permite que a seção cresça conforme o conteúdo 
     min-height: 300px;
 }
 
 #planos-de-internet  article {
-    /* MOD: adiciona padding vertical para dar respiro */
+     MOD: adiciona padding vertical para dar respiro 
     padding: 60px 0 0 0;
     height: 100%;
 }
@@ -253,7 +254,7 @@ p.difereciais-card > span {
     flex-flow: row wrap;
     gap: 10px;
     align-items: center;
-    /* MOD: centraliza conteúdo e limita largura */
+ MOD: centraliza conteúdo e limita largura 
     margin: 0 auto;
     width: min(1100px, 92vw);
 }
@@ -286,7 +287,7 @@ p.difereciais-card > span {
     text-decoration: none;
     display: block;
     margin: auto;
-    /* MOD: limita a largura do card para manter consistência */
+     MOD: limita a largura do card para manter consistência 
     width: min(320px, 90%);
     height: 120px;
     position: absolute;
@@ -294,19 +295,19 @@ p.difereciais-card > span {
     top: 50%;
 
     transform: translate(-50%, -50%);
-    /* MOD: adiciona profundidade visual sem fugir da identidade */
+     MOD: adiciona profundidade visual sem fugir da identidade 
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-}
+} */
 
-.card-plan h3 {
+/* .card-plan h3 {
     text-transform: capitalize;
-}
+} */
 
 
 /* Depoimento de clientes */
 
 #depoimento-de-clientes {
-    margin: 100px 0;
+    margin: 100px 0 150px 0;
 }
 
 #depoimento-de-clientes {
@@ -474,12 +475,11 @@ div.pergunta {
 section#suporte {
     height: 220px;
     padding: 0 15px;
-    margin: 130px 0 0 0;
+    margin: 250px 0 290px 0;
     background-color: var(--cor-principal);
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 50px;
     /* MOD: cria um pouco de separação lateral em telas maiores */
     padding-left: 6vw;
     padding-right: 6vw;
@@ -715,7 +715,7 @@ footer p:last-child > a:hover {
        
     }
 
-    #planos-de-internet,
+    /* #planos-de-internet, */
     #diferenciais,
     #suporte {
         scroll-margin-top: 104px;
@@ -757,15 +757,15 @@ footer p:last-child > a:hover {
      }
 
     /* Planos de internet */
-
-    #planos-de-internet {
-        /* MOD: usa min-height para não cortar conteúdo */
+ 
+/*     #planos-de-internet {
+        MOD: usa min-height para não cortar conteúdo 
         min-height: 322px;
     }
 
     #planos-de-internet > article {
         padding: 0;
-    }
+    } */
 
     /* Depoimentos de clientes */
     section#depoimento-de-clientes {
