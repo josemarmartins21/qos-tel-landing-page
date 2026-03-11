@@ -10,7 +10,7 @@ divulgar os serviço da **QoS Tel**, ela apresenta as seguintes secções:
 - CTA com uma mensagem pré escrita para ser envida pelo whatsapp
 
 ## Tecnológias Utilizadas
-1. HTML e CSS 
-2. JavaScript
+1. HTML e CSS (estrutura e apresentação da página)
+2. JavaScript (interatividade com o usuário)
 
 
